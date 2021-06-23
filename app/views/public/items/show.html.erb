@@ -1,18 +1,25 @@
-<div>
-  <div class="show_item_box">
-    <div>
-      <%= attachment_image_tag @item, :image, :fill, 300, 300, fallback: "no_image.jpg", size: "300x300", class:"border" %>
-    </div>
-    <div>
-      <p><%= @item.name %></p>
-      <p><%= @item.body %></p>
-      <p>¥ <%= (@item.price.to_i * 1.1).floor %>（税込）</p>
-      <%= form_with model: @cart_item, local: true do |f| %>
-      	<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5]], include_blank: "個数選択" %>
-        <%= f.submit "カートに入れる", class: "btn btn-success" %>
-        <%= f.hidden_field :customer_id, :value => current_customer.id %>
-      　<%= f.hidden_field :item_id, :value => @item.id %>
-      <% end %>
-    </div>
+<div class="container">
+  <div class="row">
+      <div class="mt-5 col-md-6">
+        <%= attachment_image_tag @item, :image, :fill, 300, 300, fallback: "no_image.jpg", size: "300x300", class:"border" %>
+      </div>
+      <div class="mt-5 col-md-6">
+        <h2><%= @item.name %></h2>
+        <p><%= @item.body %></p>
+        <h3>¥ <%= (@item.price.to_i * 1.1).floor %>（税込）</h3>
+        <% if customer_signed_in? %>
+          <%= form_with model: @cart_item, local: true do |f| %>
+          	<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5]], include_blank: "個数選択" %>
+            <%= f.submit "カートに入れる", class: "btn btn-success" %>
+            <%= f.hidden_field :customer_id, :value => current_customer.id %>
+          　<%= f.hidden_field :item_id, :value => @item.id %>
+          <% end %>
+        <% else %>
+          <%= form_with model: @cart_item, local: true do |f| %>
+          	<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5]], include_blank: "個数選択" %>
+          <% end %>
+          <%= link_to "カートに入れる", new_customer_registration_path, class:'btn btn-success' %>
+        <% end %>
+      </div>
   </div>
 </div>
