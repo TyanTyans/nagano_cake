@@ -35,6 +35,44 @@ body {
   background-image: none
 }
 
+// ボタンレイアウト //
+// 緑色ボタン //
+.btn-success {
+  color: #FAEBD7;
+  background-color: #009999;
+  border-color: #003333;
+}
+.btn-success:hover {
+  color: #FAEBD7;
+  background-color: #006666;
+  border-color: #003333;
+}
+
+// 青色ボタン //
+.btn-primary {
+  color: #FAEBD7;
+  background-color: #0099CC;
+  border-color: #000066;
+}
+
+.btn-primary:hover {
+  color: #FAEBD7;
+  background-color: #003366;
+  border-color: #000066;
+}
+
+.btn-danger {
+  color: #FAEBD7;
+  background-color: #c44d3e;
+  border-color: #660000;
+}
+
+.btn-danger:hover {
+  color: #FAEBD7;
+  background-color: #993333;
+  border-color: #660000;
+}
+
 // タイトル //
 .top-title {
   font-size: 80px;

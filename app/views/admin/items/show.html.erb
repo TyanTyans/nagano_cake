@@ -13,7 +13,7 @@
       <p class="text"><%= @item.name %></p>
       <p class="light-text"><%= @item.body %></p>
       <p class="light-text">¥ <%= (@item.price.to_i * 1.1).floor %>（税込）</p>
-      <%= link_to "編集する", edit_admin_item_path(@item), class: "btn-sm btn-success text" %>
+      <%= link_to "Edit", edit_admin_item_path(@item), class: "btn btn-success mr-4 col-2" %>
     </div>
   </div>
 </div>

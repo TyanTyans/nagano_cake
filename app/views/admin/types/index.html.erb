@@ -8,7 +8,7 @@
       <%= form_with model:@type, url: admin_types_path, local:true do |f| %>
         <label class="text">ジャンル名</label>
         <%= f.text_field :name %>
-        <%= f.submit '新規登録', class: "btn btn-success btn-sm" %>
+        <%= f.submit '-New-', class: "btn btn-success btn-sm" %>
       <% end %>
     </div>
   </div>
@@ -23,7 +23,7 @@
         <% @types.each do |type| %>
           <tr class="light-text">
             <td><%= type.name %></td>
-            <td><%= link_to "編集する", edit_admin_type_path(type.id), class: "btn btn-success" %></td>
+            <td><%= link_to "Edit", edit_admin_type_path(type.id), class: "btn btn-success btn-block" %></td>
           </tr>
         <% end %>
       </tbody>
