@@ -1,5 +1,21 @@
 <div class="container">
 
+  <% if @customer.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade show mt-4">
+    <h5 class="alert-heading">
+      <%= @customer.errors.count %> 件修正して下さい:
+    </h5>
+    <ul class="mb-0">
+      <% @customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <% end %>
+
   <div class="row">
 
     <div class="col-10 mx-auto">
