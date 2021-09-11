@@ -79,6 +79,10 @@ $ rails db:seed
 - email    : admin@gmail.com
 - password : tyantyans
 
+顧客アカウント
+- email    : user@gmail.com
+- password : testtest
+
 # ✅ 使用言語
 
 - HTML&CSS
