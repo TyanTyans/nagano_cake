@@ -70,13 +70,13 @@ InstagramのDMやメールで通販の注文を受けていたが、情報管理
 
 # ✅ 環境構築
 ```
-$ git bundle install
+$ bundle install
 $ rails db:migrate
 $ rails db:seed
 ```
 管理用アカウント
 - URL      : "/admins/sign_in"
-- email    : test@test.com
+- email    : admin@gmail.com
 - password : tyantyans
 
 # ✅ 使用言語
